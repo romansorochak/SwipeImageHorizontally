@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SwipePhotoHorizontally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQr-uR-Md2" userLabel="PreviousImageView">
+                                <rect key="frame" x="-600" y="52" width="600" height="286"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="286" id="60v-Rg-MBd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="YiY-SV-JCk" userLabel="CurrentImageView">
+                                <rect key="frame" x="0.0" y="52" width="600" height="286"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="286" id="fdo-Rh-pqK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w6l-JQ-Zke" userLabel="NextImageView">
+                                <rect key="frame" x="600" y="52" width="600" height="286"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="286" id="Zx6-sA-RaT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="w6l-JQ-Zke" secondAttribute="centerY" constant="105" id="3JW-Q5-CoX"/>
+                            <constraint firstAttribute="centerY" secondItem="HQr-uR-Md2" secondAttribute="centerY" constant="105" id="67f-bS-AI1"/>
+                            <constraint firstItem="YiY-SV-JCk" firstAttribute="leading" secondItem="HQr-uR-Md2" secondAttribute="trailing" id="7tc-oP-LDg"/>
+                            <constraint firstAttribute="centerX" secondItem="YiY-SV-JCk" secondAttribute="centerX" id="DqV-QE-fyA" userLabel="DraggableConstraint"/>
+                            <constraint firstAttribute="width" secondItem="HQr-uR-Md2" secondAttribute="width" id="Of8-04-nX0"/>
+                            <constraint firstAttribute="centerY" secondItem="YiY-SV-JCk" secondAttribute="centerY" constant="105" id="VhU-wt-gv7"/>
+                            <constraint firstItem="w6l-JQ-Zke" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="WDd-Xs-q46"/>
+                            <constraint firstItem="w6l-JQ-Zke" firstAttribute="leading" secondItem="YiY-SV-JCk" secondAttribute="trailing" id="fzK-Av-1mg" userLabel="RightFromCurrentImageConstraint"/>
+                            <constraint firstAttribute="width" secondItem="YiY-SV-JCk" secondAttribute="width" id="lTI-jl-8Te"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentImageView" destination="YiY-SV-JCk" id="t8o-Nc-N6w"/>
+                        <outlet property="draggableConstraint" destination="DqV-QE-fyA" id="DQn-aB-aeS"/>
+                        <outlet property="nextImageView" destination="w6l-JQ-Zke" id="fpT-mM-Cy9"/>
+                        <outlet property="previousImageView" destination="HQr-uR-Md2" id="Khe-rh-7v7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="491" y="458"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1" width="1920" height="1080"/>
+    </resources>
+</document>
